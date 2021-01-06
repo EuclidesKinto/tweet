@@ -29,9 +29,9 @@
                 </div>
                 <div>
                     @if ($tweet->likes->count())
-                        <a class="btn btn-danger btn-sm" href="">Descurtir</a>
+                        <a class="btn btn-danger btn-sm" href="" wire:click.prevent="deslike({{$tweet->id}})">Descurtir</a>
                     @else 
-                        <a class="btn btn-primary btn-sm" href="">Curtir</a>                        
+                        <a class="btn btn-primary btn-sm" href="" wire:click.prevent="like({{$tweet->id}})">Curtir</a>                        
                     @endif
                 </div>
                 <hr>                
