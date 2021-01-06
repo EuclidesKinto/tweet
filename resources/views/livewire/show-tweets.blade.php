@@ -15,14 +15,25 @@
     </div>
       
     <div class="col-6 m-auto">
-        @foreach ($tweets as $tweet)
-        
-        {{$tweet->user->name}} - {{$tweet->comment}}<br>
-        <hr>
-        @endforeach
-
+        <section class="card-body mt-5">
+            <!--1 tweet-->
+            @foreach ($tweets as $tweet)
+                <div>
+                    <span>
+                        <img class="img-tweet d-inline-flex" src="{{ asset('images/user.jpg') }}" alt="{{$tweet->user->name}}">
+                    </span>
+                    <strong >{{$tweet->user->name}}</strong>
+                </div>
+                <div class="mt-1 mb-3">
+                    {{$tweet->comment}}
+                </div>
+                <hr>                
+            @endforeach            
+        </section>
+    </div>
+    <div class="col-6 m-auto">
+        {{$tweets->links()}}
     </div>
 
-    {{$tweets->links()}}
 
 </div>
