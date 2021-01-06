@@ -27,6 +27,13 @@
                 <div class="mt-1 mb-3">
                     {{$tweet->comment}}
                 </div>
+                <div>
+                    @if ($tweet->likes->count())
+                        <a class="btn btn-danger btn-sm" href="">Descurtir</a>
+                    @else 
+                        <a class="btn btn-primary btn-sm" href="">Curtir</a>                        
+                    @endif
+                </div>
                 <hr>                
             @endforeach            
         </section>
