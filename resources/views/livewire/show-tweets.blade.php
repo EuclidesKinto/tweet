@@ -27,19 +27,19 @@
                 <div class="mt-1 mb-3">
                     {{$tweet->comment}}
                 </div>
-                <div>
+                <div  class="btn-group">
                     @if ($tweet->likes->count())
-                        <a class="btn btn-danger btn-sm" href="" wire:click.prevent="deslike({{$tweet->id}})">Descurtir</a>
+                        <button class="btn btn-danger btn-sm" href="" wire:click.prevent="deslike({{$tweet->id}})">Descurtir</button>
                     @else 
-                        <a class="btn btn-primary btn-sm" href="" wire:click.prevent="like({{$tweet->id}})">Curtir</a>                        
+                        <button class="btn btn-primary btn-sm" href="" wire:click.prevent="like({{$tweet->id}})">Curtir</button>                        
                     @endif
                 </div>
                 <hr>                
             @endforeach            
         </section>
-    </div>
-    <div class="col-6 m-auto">
-        {{$tweets->links()}}
+        <div class="col-6 m-auto mb-5">
+            {{$tweets->links()}}
+        </div>
     </div>
 
 
