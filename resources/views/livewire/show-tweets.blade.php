@@ -13,7 +13,7 @@
         </form>
     </div>
       
-    <div class="col-6 mt-3 m-auto">
+    <div class="col-6 m-auto">
         @foreach ($tweets as $tweet)
         
         {{$tweet->user->name}} - {{$tweet->comment}}<br>
@@ -21,4 +21,7 @@
         @endforeach
 
     </div>
+
+    {{$tweets->links()}}
+
 </div>
